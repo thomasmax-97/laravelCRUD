@@ -14,8 +14,6 @@ use Illuminate\Support\Facades\Redirect;
 class getData extends Controller
 {
 
-
-
     public function show()
     {
         $table = new firstTable;
@@ -25,17 +23,8 @@ class getData extends Controller
 
     public function store(Request $request)
     {
-        $table = new firstTable;
-        $colNames = $table->getTableColumns();
-        $data = $request->all();
-
-        $cols = $table->getTableColumns();
-        //print_r($cols);
-        foreach ($cols as $key => $val) {
-        }
-        //dd($data);
-
-        //$table    
-        $table->save();
+        $postData = array_slice($request->all(), 2);
+        DB::table('firstDB')->insert($postData);
+        return redirect('/');
     }
 }

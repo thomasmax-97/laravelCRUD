@@ -14,9 +14,10 @@ class FirstDB extends Migration
     public function up()
     {
         Schema::create('firstDB', function (Blueprint $table) {
-            $table->string('row1');
-            $table->stromg('row2');
-            $table->string('row3');
+            $table->increments('id');
+            $table->string('row1')->nullable();
+            $table->string('row2')->nullable();
+            $table->string('row3')->nullable();
         });
     }
 

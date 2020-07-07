@@ -2,15 +2,20 @@
 
 namespace App;
 
+use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
+
 
 
 class firstTable extends Model
 {
-    protected $table = 'firstTable';
+    protected $table = 'firstDB';
+
+    protected $fillable = [
+        'row1',
+        'row2',
+        'row3'
+    ];
 
     public function getTableColumns()
     {
