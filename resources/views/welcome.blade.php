@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>mini-database</title>
     @extends('cssheader')
 </head>
@@ -28,8 +29,8 @@
     
     
      <div class="col-4">
- <form method="POST">
-   {{ csrf_field() }}
+     <form method="POST">
+   @csrf
      @foreach ($data as $key => $value)
   <div class="form-group">
     <label for="exampleInputEmail1"> </label>
@@ -44,5 +45,7 @@
        
 
 </body>
+
+@extends('jsInclude')
 
 </html>
