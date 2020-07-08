@@ -18,7 +18,8 @@ class getData extends Controller
     {
         $table = new firstTable;
         $colNames = $table->getTableColumns();
-        return view('welcome', ['data' => $colNames]);
+        $theTable = $table->all();
+        return view('welcome', ['data' => $colNames, 'theTable' => $theTable]);
     }
 
     public function store(Request $request)
