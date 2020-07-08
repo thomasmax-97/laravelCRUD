@@ -24,6 +24,15 @@
         @endforeach
              </tr>
     </thead>
+    <tbody>
+        @foreach ($theTable as $table)
+    <tr>
+    <th scope="row">{{$table->id}}</th>
+      <td>{{$table->row1}}</td>
+      <td>{{$table->row2}}</td>
+      <td>{{$table->row3}}</td>
+    </tr>
+     @endforeach
 </table>
     </div>
     
@@ -32,10 +41,12 @@
      <form method="POST">
    @csrf
      @foreach ($data as $key => $value)
+     @if($key > 0)
   <div class="form-group">
     <label for="exampleInputEmail1"> </label>
   <input type="rowData" class="form-control" id="{{$key}}-ID" name="{{$value}}" placeholder="{{ $value }}">
   </div>
+  @endif
     @endforeach
 <button type="submit" class="btn btn-success">Insert Data</button>
 </form>
