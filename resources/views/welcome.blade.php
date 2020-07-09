@@ -40,14 +40,31 @@
      <div class="col-4">
      <form method="POST">
    @csrf
-     @foreach ($data as $key => $value)
-     @if($key > 0)
+    
+
+     <div class="form-group">
+     <label for="exampleFormControlSelect1"></label>
+    <select name ="select-id" class="form-control" id="exampleFormControlSelect1">
+      @foreach ($theTable as $table)
+      <option>{{$table->id}}</option>
+       @endforeach
+    </select>
+  </div>
+ 
+
+ @foreach ($lastRecord as $record => $val)
+   
+
   <div class="form-group">
     <label for="exampleInputEmail1"> </label>
-  <input type="rowData" class="form-control" id="{{$key}}-ID" name="{{$value}}" placeholder="{{ $value }}">
+  <input type="rowData" class="form-control" id="{{$val}}-ID" name="{{$val}}" placeholder="{{ $val }}">
   </div>
-  @endif
+ 
     @endforeach
+
+
+  
+
 <button type="submit" class="btn btn-success">Insert Data</button>
 </form>
 </div>

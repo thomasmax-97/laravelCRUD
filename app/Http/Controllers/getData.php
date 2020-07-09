@@ -19,13 +19,26 @@ class getData extends Controller
         $table = new firstTable;
         $colNames = $table->getTableColumns();
         $theTable = $table->all();
-        return view('welcome', ['data' => $colNames, 'theTable' => $theTable]);
+
+        $lastrow = DB::table('firstDB')->orderBy('id', 'DESC')->first();
+        $lastId = $lastrow->id;
+        $lastRecord = DB::table('firstDB')->select('row1', 'row2', 'row3')->where('id', $lastId)->get()->first();
+
+        // dd($lastRecord);
+
+        return view('welcome', [
+            'data' => $colNames, 'theTable' => $theTable,
+            'lastRecord' => $lastRecord
+        ]);
     }
 
     public function store(Request $request)
     {
-        $postData = array_slice($request->all(), 2);
-        DB::table('firstDB')->insert($postData);
+        $table = new firstTable;
+        $postData = array_slice($request->all(), 1);
+        $table->insert($postData);
+        dd($postData);
+        //   $id = $table->select('id')->where('id', )->get();
         return redirect('/');
     }
 }

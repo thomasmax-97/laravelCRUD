@@ -17,6 +17,8 @@ class firstTable extends Model
         'row3'
     ];
 
+    protected $hidden = array('id');
+
     public function getTableColumns()
     {
         return $this->getConnection()->getSchemaBuilder()->getColumnListing($this->getTable());
