@@ -15,5 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'getData@show');
+//Route::get('/?id={id}', 'getData@show');
 
 Route::post('/', 'getData@store');

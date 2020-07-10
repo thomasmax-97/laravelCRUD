@@ -36,6 +36,7 @@ class getData extends Controller
     {
         $table = new firstTable;
         $postData = array_slice($request->all(), 1);
+        // dd($postData);
         $table->insert($postData);
         dd($postData);
         //   $id = $table->select('id')->where('id', )->get();

@@ -38,19 +38,21 @@
     
     
      <div class="col-4">
-     <form method="POST">
+     <form id="the-form" method="POST">
    @csrf
     
 
      <div class="form-group">
-     <label for="exampleFormControlSelect1"></label>
-    <select name ="select-id" class="form-control" id="exampleFormControlSelect1">
+     <label for="form-selection"></label>
+    <select class="form-control" id="select" name="select">
       @foreach ($theTable as $table)
-      <option>{{$table->id}}</option>
+      <option> {{$table->id}} </option>
        @endforeach
     </select>
   </div>
  
+
+  //TODO CHANGE TO SELECTED ROW VIA GET !
 
  @foreach ($lastRecord as $record => $val)
    
