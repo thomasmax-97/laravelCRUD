@@ -53,7 +53,7 @@
  
 
   //TODO CHANGE TO SELECTED ROW VIA GET !
-
+  //WRONG CURENNTLY NOT WORKING
  @foreach ($lastRecord as $record => $val)
    
 
