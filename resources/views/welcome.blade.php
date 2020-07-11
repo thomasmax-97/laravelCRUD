@@ -44,7 +44,7 @@
 
      <div class="form-group">
      <label for="form-selection"></label>
-    <select class="form-control" id="select" name="select">
+    <select class="form-control" onchange="myFunction()" id="select" name="select">
       @foreach ($theTable as $table)
       <option> {{$table->id}} </option>
        @endforeach
@@ -52,8 +52,7 @@
   </div>
  
 
-  //TODO CHANGE TO SELECTED ROW VIA GET !
-  //WRONG CURENNTLY NOT WORKING
+  
  @foreach ($lastRecord as $record => $val)
    
 
