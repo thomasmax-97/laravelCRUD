@@ -24,8 +24,6 @@ class getData extends Controller
         $lastId = $lastrow->id;
         $lastRecord = DB::table('firstDB')->select('row1', 'row2', 'row3')->where('id', $lastId)->get()->first();
 
-        // dd($lastRecord);
-
         return view('welcome', [
             'data' => $colNames, 'theTable' => $theTable,
             'lastRecord' => $lastRecord
@@ -36,10 +34,8 @@ class getData extends Controller
     {
         $table = new firstTable;
         $postData = array_slice($request->all(), 1);
-        // dd($postData);
+
         $table->insert($postData);
-        dd($postData);
-        //   $id = $table->select('id')->where('id', )->get();
         return redirect('/');
     }
 }
