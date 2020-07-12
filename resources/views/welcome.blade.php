@@ -42,17 +42,16 @@
    @csrf
     
 
-     <div class="form-group">
-     <label for="form-selection"></label>
-    <select class="form-control" id="select" name="select">
+     <div class="form-group">  
+    <select id="id-selection" class="custom-select custom-select-lg mb-3" name="id-select">
       @foreach ($theTable as $table)
       <option> {{$table->id}} </option>
        @endforeach
     </select>
   </div>
+
  
 
-  //TODO CHANGE TO SELECTED ROW VIA GET !
 
  @foreach ($lastRecord as $record => $val)
    
