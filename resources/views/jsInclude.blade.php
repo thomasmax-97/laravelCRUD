@@ -4,6 +4,7 @@
   crossorigin="anonymous"></script>
 
 <script>
+<<<<<<< HEAD
 $('#id-selection').on('change', function() {
   var url = document.location.href;
   
@@ -16,5 +17,18 @@ $('#id-selection').on('change', function() {
   document.location = url;
 
 });
+=======
+/*
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+*/
+function myFunction(){
+    document.getElementById("the-form").submit();
+}
+
+>>>>>>> master
 
 </script>
