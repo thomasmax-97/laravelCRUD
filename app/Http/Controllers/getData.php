@@ -24,6 +24,10 @@ class getData extends Controller
         $lastId = $lastrow->id;
         $lastRecord = DB::table('firstDB')->select('row1', 'row2', 'row3')->where('id', $lastId)->get()->first();
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
         return view('welcome', [
             'data' => $colNames, 'theTable' => $theTable,
             'lastRecord' => $lastRecord

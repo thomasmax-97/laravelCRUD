@@ -42,17 +42,27 @@
    @csrf
     
 
+<<<<<<< HEAD
+     <div class="form-group">  
+    <select id="id-selection" class="custom-select custom-select-lg mb-3" name="id-select">
+=======
      <div class="form-group">
      <label for="form-selection"></label>
     <select class="form-control" onchange="myFunction()" id="select" name="select">
+>>>>>>> master
       @foreach ($theTable as $table)
       <option> {{$table->id}} </option>
        @endforeach
     </select>
   </div>
+
  
 
+<<<<<<< HEAD
+
+=======
   
+>>>>>>> master
  @foreach ($lastRecord as $record => $val)
    
 
