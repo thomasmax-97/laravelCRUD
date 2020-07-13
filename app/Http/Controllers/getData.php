@@ -14,20 +14,23 @@ use Illuminate\Support\Facades\Redirect;
 class getData extends Controller
 {
 
-    public function show()
+    public function show(Request $request)
     {
+        // dd($request->input('id'));
         $table = new firstTable;
         $colNames = $table->getTableColumns();
         $theTable = $table->all();
 
         $lastrow = DB::table('firstDB')->orderBy('id', 'DESC')->first();
         $lastId = $lastrow->id;
-        $lastRecord = DB::table('firstDB')->select('row1', 'row2', 'row3')->where('id', $lastId)->get()->first();
+        if ($request->input('id') == null) {
+            $lastRecord = DB::table('firstDB')->select('row1', 'row2', 'row3')->where('id', $lastId)->get()->first();
+        } else {
+            $lastRecord = DB::table('firstDB')->select('row1', 'row2', 'row3')->where('id', $request->input('id'))->first();
+        }
 
-<<<<<<< HEAD
+        //  dd($lastRecord->first());
 
-=======
->>>>>>> master
         return view('welcome', [
             'data' => $colNames, 'theTable' => $theTable,
             'lastRecord' => $lastRecord
