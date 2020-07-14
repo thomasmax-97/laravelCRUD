@@ -27,6 +27,7 @@ class getData extends Controller
             $lastRecord = DB::table('firstDB')->select('row1', 'row2', 'row3')->where('id', $lastId)->get()->first();
         } else {
             $lastRecord = DB::table('firstDB')->select('row1', 'row2', 'row3')->where('id', $request->input('id'))->first();
+            // dd($lastRecord);
         }
 
         //  dd($lastRecord->first());
