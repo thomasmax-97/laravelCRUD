@@ -46,7 +46,7 @@
      <label for="form-selection"></label>
     <select class="form-control"  id="id-selection" name="select">
       @foreach ($theTable as $table)
-      <option> {{$table->id}} </option>
+      <option value = {{$table->id}}> {{$table->id}} </option>
        @endforeach
     </select>
   </div>
